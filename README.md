@@ -11,3 +11,9 @@
   - il file rendered.pdf è un facsimile di quello che verrà creato alla fine, ma di fatto è il pdf di tutta la prima parte di appunti. 
 
   - backgournd.pdf, META.yaml, LICENSE sono file che servono per la creazione del pdf finale.
+
+
+  TODO:
+  3.3 adding images
+  4.2 adding images
+  4.3 adding images

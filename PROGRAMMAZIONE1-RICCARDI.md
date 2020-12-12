@@ -404,3 +404,264 @@ Il C presenta una serie di elementi che lo rendono importante da imparare:
 * ha un astrazione che è posizionata tra il medio e il basso livello, motivo per cui è molto utile per ad. es. embedded system.
 
 Il linguaggio C è stato creato nel 1972 da Kernighan e Ritchie ai Bell Tel. Labs. 
+
+# 3.1 Operazioni Logiche (algebra di Boole)
+
+L'algebra di Boole è basata su tre operatori logici (NOT, AND, OR). Gli operandi posso assumere due valori: VERO e FALSO. 
+
+Gli operatori godono della proprietà 
+
+- commutativa  (es. A OR B = B OR A)
+- distributiva  (es. A AND (B OR C) = (A AND B) OR (A AND C))
+
+Le tabelle di verità associano a tutti i possibili valori degli operandi il risultato
+
+![](C:\Users\giova\Documents\1_UNI\programmazione1\appunti\appunti-prog1\image\image-20201207220212631-1607774144622.png)
+
+![](C:\Users\giova\Documents\1_UNI\programmazione1\appunti\appunti-prog1\image\image-20201207220252086-1607774220882.png)
+
+solitamente NOT viene rappresentata con !, AND con && e OR con ||.
+
+quando si valuta un espressione l'ordine è il seguente (NOT, AND, OR), per esempio.
+
+
+
+![image-20201207220627893](C:\Users\giova\Documents\1_UNI\programmazione1\appunti\appunti-prog1\image\image-20201207220627893.png)
+
+
+
+Per calcolare il risultato di un espressione (per esempio NOT Y AND (Y OR NOT X)) si crea una tabella di verità, prima con i valori singoli per poi raggrupparli fino ad arrivare alla formula di partenza. 
+
+
+
+![](C:\Users\giova\Documents\1_UNI\programmazione1\appunti\appunti-prog1\image\image-20201207220834575.png)
+
+#### Leggi di De Morgan
+
+* A AND B = NOT ((NOT A) OR (NOT B))
+* A OR B = NOT ((NOT A) AND (NOTB))
+
+si possono dimostrare compilando la tabella di verità e osservando che le tabelle delle espressione ai due lati dell'uguale hanno stessi risultati a parità di input. 
+
+**Tautologia**: espressione che è sempre vera
+
+**Contradizione**: espressione sempre falsa
+
+# 3.2 Codifica Semplici Algoritmi in C
+
+istruzione di assegnamento:
+
+```c++
+x = 23;
+w = 'a';
+y = z;
+```
+
+
+
+### **costruttore if-else**
+
+diagramma di flusso:
+
+<img src="C:\Users\giova\Documents\1_UNI\programmazione1\appunti\appunti-prog1\image\image-20201207221436129.png" alt="image-20201207221436129" style="zoom:70%;" />
+
+L'espressione tra parentesi viene valutata, se vera viene eseguito il primo blocco, se falsa l'altro. Naturalmente si può utilizzare anche l' if da solo senza else.  All'interno dell'espressione posso utilizzare gli operatori logici (&&, ||).
+
+è sempre meglio utilizzare indentazione e paretesi graffe per una migliore leggibilità e per non commettere errori. 
+
+**Operatore ternario ?** è un altro modo di scrivere if-else, la sintassi è la seguente
+
+```c++
+espressione1 ? espressione2 : espressione3; //questo equivale al seguente if-else
+
+if (espressione1)
+	{ espressione2; }
+else
+	{ espressione3; }
+```
+
+dopo le parentesi graffe il ; non è necessario, ma se viene messo non c'è errore. 
+
+
+
+### Precedenza degli operatori
+
+In un espressione vengono eseguiti prima gli operatori con precedenza superiore, se gli operatori sono dello stesso gruppo si usano le regole di associatività (da destra o da sinistra), le parentesi posso essere usate per modificare la precedenza. 
+
+Associatività da sinistra a destra significa che a parità di priorità l'espressione viene eseguita partendo da sinistra a destra. 
+
+
+
+<img src="C:\Users\giova\Documents\1_UNI\programmazione1\appunti\appunti-prog1\image\image-20201207222403040.png" alt="image-20201207222403040" style="zoom:90%;" />
+
+
+
+```c++
+if (a + b – 4 <= 9 && x < tot -1 ) // questa espressione è equivalente a quella sotto
+    
+if (((a + b – 4) <= 9) && (x < tot -1) )
+```
+
+
+
+### Istruzione Iterativa ( ciclo )
+
+il diagramma di flusso è il seguente (il ciclo si chiama while). Il blocco istruzioni viene ripetuto fino a quando l'espressione non diventa falsa. 
+
+
+
+<img src="C:\Users\giova\Documents\1_UNI\programmazione1\appunti\appunti-prog1\image\image-20201207222854560.png" alt="image-20201207222854560" style="zoom:80%;" />
+
+
+
+(da pagina 38 a 56 un po' di esercizi noiosi)
+
+#### getchar e putchar
+
+```c++
+//getchar legge il prossimo carattere inserito da tastiera
+c = getchar();
+//putchar stampa il carattere nello standard output
+putchar(c)
+```
+
+
+
+#### **Esercizio scale:** 
+
+Sia data una scala di N gradini. Si supponga di salire l’intera scala con passi da 1 , 2 o 3 scalini. In quanti possibili modi si può salire l’intera scala ?
+
+**risoluzione in modo semplice:** 
+
+Devo capire in quanti modi possibili posso salire una scala con n gradini. Posso compiere passi da 1, 2 o 3 gradini. 
+
+Mi calcolo in quanti modi posso salire una scala formata da 1 2 o 3 gradini e basta.
+
+Un gradino = 1 modo 
+
+Due gradino = 2 modo 
+
+Tre gradino = 4 modo 
+
+Per arrivare al quarto gradino ho solo tre possibilità: fare un passo da uno, da due o da tre, quindi devo arrivare al gradino 4-1, 4-2, 4-3, siccome so già quanti passi ci vogliono per arrivare in questi posti, basta sommarli assieme per capire il numero di passi per arrivare al quarto. 
+
+Aggiorno il numero di passi per il gradino n-1, n-2, n-3 e vado avanti.   (se non si capisce chiedetemi che vi spiego meglio).
+
+# 4.1 Array in C
+
+Gli array possono essere paragonati a vettori e matrici in matematica. Da un punto di vista più concreto sono una sequenza di celle di memoria consecutive e omogenee. L'array è quindi un contenitore per *variabili dello stesso tipo*. 
+
+A ciascun elemento dell’array si accede tramite indice (esempio a[i] è l'elemento alla posizione i-esima). Le parentesi quadre sono operatori ad alta precedenza (sono al primo livello della tabella).
+
+Il primo elemento dell'array è quello in posizione 0, la macchina astratta prende l'indice e lo somma all'indirizzo della prima cella dell'array. 
+
+Prima di utilizzare le array bisogna dichiararle: 
+
+```c++
+int a[100]; // dichiara un contenitore a (array) che potrà contenere 100 elementi di tipo int, il primo elemento lo si trova in a[0], l'ultimo in a[99]
+```
+
+il compilatore va a riservare la memoria per tutti questi elementi
+
+
+
+![](C:\Users\giova\Documents\1_UNI\programmazione1\appunti\appunti-prog1\image\image-20201208144533768-1607774562526.png)
+
+
+
+In generale l'ultimo elemento dell'array è nella posizione n-1, dove n è la lunghezza dell'array stessa. All'interno delle parentesi si possono mettere delle espressioni. Un veloce esercizio: 
+
+<img src="C:\Users\giova\Documents\1_UNI\programmazione1\appunti\appunti-prog1\image\image-20201208144802799.png" alt="image-20201208144802799" style="zoom:80%;" />
+
+SOLUZIONE: a[0]= indeterminato, a[1] = 6
+
+ATTENZIONE: se vado oltre l'indice massimo dell'array accedo a celle di memoria che non appartengono all'array e il cui valore è indeterminato. 
+
+L'array in C non è un tipo, ma un costruttore di tipo. 
+
+### Inizializzazione e stampa
+
+si può inizializzare direttamente al momento della dichiarazione
+
+```c++
+int a[5] = {5, 2, -5, 10, 234};
+int b[4] = {5, 2, -5}; //un elemento non è inizializzato
+int c[2] = {5, 2, -5}; // ERRORE: inizializzato un elemento che non appartiene all'array
+```
+
+per array grandi questo metodo diventa scomodo, quindi si usano i cicli per inizializzare. 
+
+anche per stampare un array devo utilizzare un ciclo
+
+```c++
+printf("%d", a); // errato perchè a è un array
+
+int i=0; // questo è il procedimento corretto
+while (i<5){
+    printf("%d",a[i]);
+    i++;
+} 
+```
+
+esercizi sulle array dalla slide 31 a 41.
+
+**Array dinamici**: il C permette inizializzare la dimensione di un array durante l'esecuzione di un programma (per esempio chiedendo la dimensione da tastiera).
+
+
+
+### Array multidimensionali
+
+Le array di due dimensioni corrispondo alle matrici in matematica. Si dichiarano nel seguente modo: 
+
+```c++
+int a[N][M]; //N numero righe M numero colonne
+
+//è anche possibile definire più dimensioni
+int a[10][5][20];
+```
+
+Come per gli array ad 1 dimensione, anche questi possono essere inizializzati nella fase di dichiarazione:
+
+```c++
+int a[4][5]= { {2, 5, -8, 7, 6},
+                {3, 10, 7, 6, 1},
+                {-1,8, -8, 5, 3},
+                {2, 5, 8, 4, 2}
+			 };
+```
+
+Per semplicità possiamo immaginare l'array in due o più dimensioni, ma la macchina astratta del C memorizza gli elementi uno dietro l'altro. Per esempio l'array creata sopra verrà memorizzata nel seguente modo: 
+
+![](C:\Users\giova\Documents\1_UNI\programmazione1\appunti\appunti-prog1\image\image-20201208150630550.png)
+
+altri esempi di inizializzazione corretta e sbagliata: 
+
+```c++
+int D[][]={1,2,3,4}; // errata
+int E[2][]={1,2,3,4}; //errore non viene specificato il numero di colonne
+
+int F[][4]={{1,2,3,4}}; //va bene 
+// in c nella dichiarazione di un array bisogna valorizzare tutte le dimensioni, si può fare a meno di quella più a sinistra 
+```
+
+le array possono anche essere inizializzate con dei cicli
+
+```c++
+int main(int argc, char *argv[]){
+    int matrice[10][5];
+    int i=0,j=0;
+    while (i<10)
+    {
+        j=0;
+        while (j<5)
+        {
+            printf("%d ",matrice[i][j]);
+            j++;
+        }
+        printf("\n");
+        i++;
+	}
+}
+```
+
+esercizi da pagina 61 in poi
