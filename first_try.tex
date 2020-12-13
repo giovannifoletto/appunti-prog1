@@ -1,39 +1,4 @@
 %%
-% Copyright (c) 2017 - 2020, Pascal Wagler;
-% Copyright (c) 2014 - 2020, John MacFarlane
-%
-% All rights reserved.
-%
-% Redistribution and use in source and binary forms, with or without
-% modification, are permitted provided that the following conditions
-% are met:
-%
-% - Redistributions of source code must retain the above copyright
-% notice, this list of conditions and the following disclaimer.
-%
-% - Redistributions in binary form must reproduce the above copyright
-% notice, this list of conditions and the following disclaimer in the
-% documentation and/or other materials provided with the distribution.
-%
-% - Neither the name of John MacFarlane nor the names of other
-% contributors may be used to endorse or promote products derived
-% from this software without specific prior written permission.
-%
-% THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
-% "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
-% LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
-% FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
-% COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
-% INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
-% BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
-% LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
-% CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
-% LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
-% ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
-% POSSIBILITY OF SUCH DAMAGE.
-%%
-
-%%
 % This is the Eisvogel pandoc LaTeX template.
 %
 % For usage information and examples visit the official GitHub page:
@@ -51,6 +16,8 @@
 ]{scrbook}
 \usepackage{lmodern}
 \usepackage{setspace}
+\usepackage{subcaption}
+\usepackage{wrapfig}
 \setstretch{1.2}
 \usepackage{amsmath}
 \usepackage{ifxetex,ifluatex}
@@ -109,7 +76,7 @@
 % Scale images if necessary, so that they will not overflow the page
 % margins by default, and it is still possible to overwrite the defaults
 % using explicit options in \includegraphics[width, height, ...]{}
-\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\setkeys{Gin}{width=\maxwidth,height=0.5\maxheight,keepaspectratio}
 % Set default figure placement to htbp
 \makeatletter
 \def\fps@figure{htbp}
@@ -462,7 +429,7 @@ trattamento dell'informazione, in particolare all'elaborazione
 automatica dei dai. Ma anche lo studio sistematico degli algoritmi che
 descrivono e trasformano l'informazione.
 
-\hypertarget{algoritmi-e-linguaggi-di-programmazione}{%
+\hypertarget{algoritmi-e-linguaggi-di-programmazione}{
 \subsubsection{1.1) Algoritmi e linguaggi di
 programmazione:}\label{algoritmi-e-linguaggi-di-programmazione}}
 
@@ -471,7 +438,7 @@ comprensibili da un esecutore, che definisce una sequenza finita di
 passi che portano alla realizzazione di un compito (\emph{task o
 problema}).
 
-L'algoritmo ha alcune caratteristiche: (2 e 3 sono le più importanti)
+L'algoritmo ha alcune caratteristiche (2 e 3 sono le più importanti):
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -661,7 +628,7 @@ sull'astrazione del linguaggio:
   se il linguaggio è troppo di alto livello, quindi molto vicino al
   linguaggio del programmatore, i programmi diventano inefficienti.
 
-  \includegraphics{./image/image-20201111001022024.png}
+    \includegraphics[height=3.5cm]{./image/image-20201111001022024.png}
 \end{enumerate}
 
 Agli albori dell'informatica si programmava in linguaggio macchina, cioè
@@ -680,9 +647,15 @@ algoritmi:}\label{metodo-grafico-per-creare-algoritmi}}
 Gli algoritmi possono essere schematizzati anche attraverso diagrammi di
 flusso, cioè blocchi orientati che hanno un significato proprio.
 
-\includegraphics{./image/image-20201111002115408.png}
+\begin{figure}[h]
 
-\includegraphics{./image/image-20201111002130617.png}
+\begin{subfigure}{0.5\textwidth}
+\includegraphics[width=0.9\linewidth, height=5cm]{./image/image-20201111002115408.png} 
+\end{subfigure}
+\begin{subfigure}{0.5\textwidth}
+\includegraphics[width=0.9\linewidth, height=5cm]{./image/image-20201111002130617.png}
+\end{subfigure}
+\end{figure}
 
 CARATTERISTICHE:
 
@@ -768,7 +741,7 @@ La miniaturizzazione che è avvenuta è dovuta alla possibilità di
 dimezzare la grandezza del transistor per un certa quantità di volte,
 data dalla legge di Moore.
 
-\includegraphics{./image/290px-Transistor_Count_and_Moore's_Law_-_2011.svg.png}
+\includegraphics[height=6cm]{./image/290px-Transistor_Count_and_Moore's_Law_-_2011.svg.png}
 
 Moore infatti nel 1965 ipotizza che il numero di transistor inseribili
 nei microprocessori sarebbe raddoppiato ogni anno. La sua previsione si
@@ -788,7 +761,7 @@ permette di passare il clock in tutte le parti del processore e rendere
 quindi i processi sincronizzati, utilizzando la potenza di tutte le
 parti assieme e quindi garantendo una maggior potenza.
 
-\includegraphics{./image/image-20201111171947392.png}
+\includegraphics[height=4cm]{./image/image-20201111171947392.png}
 
 \hypertarget{organizzare-il-software-di-un-calcolatore}{%
 \subparagraph{Organizzare il software di un
@@ -796,7 +769,7 @@ calcolatore}\label{organizzare-il-software-di-un-calcolatore}}
 
 Il normale schema di un calcolatore è (generalmente) così costruito:
 
-\includegraphics{./image/image-20201111172243268.png}
+\includegraphics[height=4.5cm]{./image/image-20201111172243268.png}
 
 Per leggere questo schema bisogna capire che:
 
@@ -816,10 +789,10 @@ Per leggere questo schema bisogna capire che:
 \hypertarget{architettura-hardware}{%
 \subparagraph{Architettura Hardware:}\label{architettura-hardware}}
 
-\includegraphics{./image/image-20201111172642835.png}
-
 L'architettura hardware sopra è nota con il nome di \textbf{Macchina di
 Von Neumann} ed è così costituita:
+
+\includegraphics[height=3.5cm]{./image/image-20201111172642835.png}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -912,7 +885,7 @@ i dati e i programmi necessari al tuo scopo.
 Per questo motivo in memoria non si può accedere a valori più grandi di
 2\^{}16 e non si può accedere all'indirizzo 1024.
 
-\includegraphics{./image/image-20201111185631084.png}
+\includegraphics[height=5cm]{./image/image-20201111185631084.png}
 
 Però poi a questa memoria si deve poter accedere, quindi nella CPU
 esistono dei registri, che sono word di memoria chiamate così per
@@ -973,13 +946,13 @@ inventate strutture per contenere la rappresentazione figurata della
 realtà. Ad esempio la convenzione ASCII, poi diventata extended-ASCII,
 ha codificato i caratteri come sequenza di 8bit, il \textbf{byte}.
 
-\includegraphics{./image/image-20201111184647324.png}
+\includegraphics[height=3cm]{./image/image-20201111184647324.png}
 
 Per i multipli del byte si adottano gli stessi simboli del sistema
 decimale, ma visto che gli elementi sono in base 2, il fattore di scala
 è leggermente diverso:
 
-\includegraphics{./image/image-20201111184937248.png}
+\includegraphics[height=2.5cm]{./image/image-20201111184937248.png}
 
 1.2.5) Funzionamento della CPU:
 
@@ -1000,9 +973,9 @@ Innanzitutto bisogna dire che:
   L'intera macchina opera in maniera sequenziale (però architetture più
   evolute prevedono l'esecuzione parallela delle istruzioni).
 \end{enumerate}
-
-\includegraphics{./image/image-20201111191808017.png}
-
+\begin{center}
+\includegraphics[height=5.8cm]{./image/image-20201111191808017.png}
+\end{center}
 Come si vede dall'immagine la CPU ha a disposizione vari elementi:
 
 \begin{enumerate}
@@ -1150,9 +1123,9 @@ magnetico-ottici.
 \end{enumerate}
 
 1.2.8) L'interfaccia delle Periferiche
-
+\begin{center}
 \includegraphics{./image/image-20201112230056001.png}
-
+\end{center}
 Comunicare con le periferiche può essere complicato, infatti se si
 dovesse avere del codice per parlare con ogni singola periferica il
 lavoro del programmatore diventerebbe impossibile. Per questo esiste
@@ -1225,7 +1198,7 @@ stampanti.
 \subsubsection{1.3) Architettura software di un
 compilatore:}\label{architettura-software-di-un-compilatore}}
 
-\includegraphics{./image/image-20201112231919938.png}
+\includegraphics[height=5cm]{./image/image-20201112231919938.png}
 
 Con il termine \emph{sistema operativo} intendiamo l'insieme di
 programmi che opera direttamente sulla macchina fisica, fornendo
@@ -1258,17 +1231,20 @@ utenti contemporaneamente, usando il multitasking. Tutti gli utenti
 infatti hanno un ordine di esecuzione al processore, ma sono tutti
 nell'ordine del proprio utente. Da Unix poi si svilupperanno tutti i
 sistemi operativi che tuttora conosciamo (Come MS-DOS o Linux).
-
-\includegraphics{./image/image-20200930171019756.png}
-
+\begin{center}
+\includegraphics[height=4cm]{./image/image-20200930171019756.png}
+\end{center}
 Architettura di un SO, che ad oggi è organizzato secondo un architettura
 a \emph{strati} (anche detta \emph{onion skin architecture}). Ogni
 strato fornisce un astrazione dello strato sui cui si appoggia e
+\begin{wrapfigure}{l}{0.25\textwidth}
+\includegraphics[width=0.9\linewidth]{./image/image-2020112323365770.png}
+\end{wrapfigure}
 permette una chiara separazione tra interfaccia e implementazione delle
 diverse funzionalità, oltre che a fornire l'insieme di programmi e
 librerie.
 
-\includegraphics{./image/image-2020112323365770.png}
+
 
 Il \emph{kernel} del sistema operativo, ovvero il cuore dell'OS si
 occupa di:
@@ -1303,9 +1279,9 @@ Logicamente il processo non viene gestito direttamente dal processore
 reale, se no verrebbe meno il concetto di multitasking. Il processore
 crea dei processori virtuali che si comportano similmente e che possono
 essere assegnati a un processo.
-
+\begin{center}
 \includegraphics{./image/image-20201123234616173.png}
-
+\end{center}
 Nel processore è possibile che ci sia un solo processo in esecuzione in
 ogni istante, mentre gli altri processi sono pronti o in attesa. Ad ogni
 processo viene assegnato un valore massimo di tempo di esecuzione,
@@ -1318,9 +1294,9 @@ tipica per la gestione del tempo di esecuzione di processi è a turno
 ad essere eseguiti, nella realtà non funziona perché alcuni processi
 hanno la priorità). La CPU viene rilasciata anche quando un processo sta
 aspettando un I/O da/verso una periferica.
-
-\includegraphics{./image/image-20201123235406308.png}x
-
+\begin{center}
+\includegraphics[height=5cm]{./image/image-20201123235406308.png}x
+\end{center}
 In questa complicata gestione delle risorse prende parte anche la
 gestione della memoria, che pensa al partizionamento della memoria tra i
 vari processi che la richiedono garantendo la protezione/separazione fra
@@ -1411,9 +1387,14 @@ Gli operatori godono della proprietà
 Le tabelle di verità associano a tutti i possibili valori degli operandi
 il risultato
 
-\includegraphics{./image/image-20201207220212631-1607774144622.png}
-
-\includegraphics{./image/image-20201207220252086-1607774220882.png}
+\begin{figure}[h]
+\begin{subfigure}{0.5\textwidth}
+\includegraphics[width=0.9\linewidth, height=5cm]{./image/image-20201207220212631-1607774144622.png}
+\end{subfigure}
+\begin{subfigure}{0.5\textwidth}
+\includegraphics[width=0.9\linewidth, height=5cm]{./image/image-20201207220252086-1607774220882.png}
+\end{subfigure}
+\end{figure}
 
 solitamente NOT viene rappresentata con !, AND con \&\& e OR con
 \textbar\textbar.
@@ -1421,18 +1402,16 @@ solitamente NOT viene rappresentata con !, AND con \&\& e OR con
 quando si valuta un espressione l'ordine è il seguente (NOT, AND, OR),
 per esempio.
 
-\begin{figure}
-\centering
-\includegraphics{C:/Users/giova/Documents/1_UNI/programmazione1/appunti/appunti-prog1/image/image-20201207220627893.png}
-\caption{image-20201207220627893}
-\end{figure}
+\begin{center}
+\includegraphics{./image/image-20201207220627893.png}
+\end{center}
 
 Per calcolare il risultato di un espressione (per esempio NOT Y AND (Y
 OR NOT X)) si crea una tabella di verità, prima con i valori singoli per
 poi raggrupparli fino ad arrivare alla formula di partenza.
-
-\includegraphics{./image/image-20201207220834575.png}
-
+\begin{center}
+\includegraphics[height=4cm]{./image/image-20201207220834575.png}
+\end{center}
 \hypertarget{leggi-di-de-morgan}{%
 \paragraph{Leggi di De Morgan}\label{leggi-di-de-morgan}}
 
@@ -1505,9 +1484,9 @@ Associatività da sinistra a destra significa che a parità di priorità
 l'espressione viene eseguita partendo da sinistra a destra.
 
 \begin{lstlisting}[language={C++}]
-if (a + b – 4 <= 9 && x < tot -1 ) // questa espressione è equivalente a quella sotto
+if (a + b - 4 <= 9 && x < tot -1 ) // questa espressione è quivalente a quella sotto
     
-if (((a + b – 4) <= 9) && (x < tot -1) )
+if (((a + b - 4) <= 9) && (x < tot -1) )
 \end{lstlisting}
 
 \hypertarget{istruzione-iterativa-ciclo}{%
@@ -1522,6 +1501,7 @@ falsa.
 
 \hypertarget{getchar-e-putchar}{%
 \subparagraph{Getchar e Putchar}\label{getchar-e-putchar}}
+Esempio di getcahr e putchar:
 
 \begin{lstlisting}[language={C++}]
 //getchar legge il prossimo carattere inserito da tastiera
@@ -1578,17 +1558,17 @@ in quei casi è più compatto rispetto ad un while.
 \emph{DO-WHILE}}{Il costrutto DO-WHILE}}\label{il-costrutto-do-while}}
 
 schema a blocchi e sintassi:
-
-\includegraphics{./image/image-20201207224157049.png}
-
+\begin{center}
+\includegraphics[height=4.5cm]{./image/image-20201207224157049.png}
+\end{center}
 \begin{lstlisting}[language={C++}]
 // un esempio
 Contatore = 0;
 do
 {
-    scanf (" %c", &Dato);
+    scanf (" \%c", \&Dato);
     Contatore ++;
-} while (Dato != '%’);
+} while (Dato != '\%');
 \end{lstlisting}
 
 si utilizza quando voglio eseguire un blocco di istruzioni almeno una
@@ -1600,9 +1580,9 @@ tastiera.
 \emph{SWITH}}{Il costrutto SWITH}}\label{il-costrutto-swith}}
 
 Va a sostituire un if-else multiplo, schema a blocchi e sintassi:
-
+\begin{center}
 \includegraphics{./image/image-20201207224317378.png}
-
+\end{center}
 Il \textbf{default} (le istruzioni che vengono eseguite in caso che
 nessuna delle altre sia vera) è opzionale. I singoli case vengono
 eseguiti quando il valore dell'espressione è uguale a quello scritto
@@ -1783,7 +1763,7 @@ L'inizializzazione vista sopra è molto più veloce ed è equivalente ad
 inizializzare nel seguente modo:
 
 \begin{lstlisting}[language={C++}]
-char mia_stringa[] = {‘C’,‘i’,‘a’,’o’,’ ‘,’a’,’ ‘,’t’,’u’,’t’,’t’,’i’,’!’,’\0’};
+char mia_stringa[] = \{'C','i','a',o',' ','a',' ','t','u','t','t','i','!','\textbackslash0'\};
 \end{lstlisting}
 
 Se non specifico il numero all'interno delle parentesi quadre quando
@@ -1860,14 +1840,15 @@ sono finiti).
 
 Per rappresentare anche i numeri negativi, si utilizza il primo bit come
 bit di segno (0 per i numeri negativi, 1 per i positivi)
-
+\begin{center}
 \includegraphics{./image/image-20201212110945997.png}
-
+\end{center}
+\begin{wrapfigure}{l}{0.25\textwidth}
+\includegraphics[width=0.9\linewidth]{./image/image-20201212111232217.png}
+\end{wrapfigure}
 In realtà nei calcolatori non si usa questa rappresentazione ma quella
 in complemento a due con i seguenti vantaggi: non c'è un doppio zero,
 non c'è bisogno di una circuiteria specifica. Esempio:
-
-\includegraphics{./image/image-20201212111232217.png}
 
 Per decodificare i valori positivi si procede nel modo normale, per
 quelli negativi si decodifica e poi si sottrae 2\^{}N-1. Per invertire i
@@ -1893,6 +1874,7 @@ opportuna, ci sono due tecniche:
 esempio codifica virgola fissa:
 
 \includegraphics{./image/image-20201212112345743.png}
+
 
 Per la virgola mobile solitamente vengono utilizzati 32 bit, 1 per il
 segno, 8 per l'esponente e il resto per la mantissa
