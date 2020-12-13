@@ -1,4 +1,4 @@
-Giovanni Foletto - Primo anno ICE
+Giovanni Foletto, Stefano Viel, Carnelos Enrico - Primo anno ICE
 
 # PROGRAMMAZIONE 1 - RICCARDI
 
@@ -183,7 +183,7 @@ L'architettura hardware sopra è nota con il nome di **Macchina di Von Neumann**
 
 ##### 	Macchina di Von Neumann:
 
-###### CPU: unità di elaborazione
+###### 1.2.1) CPU: unità di elaborazione
 
 La CPU è l'unità di elaborazione del calcolatore, si occupa di caricare le istruzioni in memoria centrale, interpretarle e eseguirle.
 
@@ -191,7 +191,7 @@ E' altamente specializzata, perché è pensata per eseguire pochi tipi di operaz
 
 Il suo lavoro è scandito dal **clock** (orologio interno). La potenza del calcolatore dipende in parte dal clock, infatti quanto più questo è alto, tante più sono le istruzioni che riesce ad eseguire al secondo. La sua frequenza infatti viene misurata in Hz, e 1 Hz = 1 ciclo/s. Ad oggi le CPU riescono a lavorare in parallelo, il cosiddetto "lavoro condiviso", grazie al clock. Infatti il segnale del clock che arriva a tutti sincronizzato permette di eseguire azioni contemporaneamente.
 
-###### Memoria centrale:
+###### 1.2.2) Memoria centrale:
 
 La memoria centrale è destinata a accogliere dati e programmi sui quali opera il calcolatore. (ad es. quando usiamo il computer qui vengono memorizzati i dati di programmi che stiamo usando, ...). La memoria centrale è velocissima ma volatile (cioè una volta che il programma finisce, tutti i dati di un programma vengono cancellati e lo spazio viene liberato). Questa memoria accoglie i dati necessari a far funzionare i programmi. Concettualmente è composta da una sequenza di celle ognuna delle quali contiene una parola (**word**). Ad ogni cella si può accedere direttamente specificandone l'**indirizzo**, e accedendone si può cambiare il suo contenuto (read/write). La quantità di bit da cui è composta la word dipende dalla macchina, infatti è caratteristico del microprocessore e attraverso questo si identifica lo spazio di indirizzamento. 
 
@@ -212,7 +212,7 @@ Però poi a questa memoria si deve poter accedere, quindi nella CPU esistono dei
 
 I registri sono elementi di supporto al calcolo.
 
-###### Gerarchia di memoria
+###### 1.2.3) Gerarchia di memoria
 
 Ci sono a disposizione memorie con caratteristiche diverse in base al loro scopo:
 
@@ -221,7 +221,7 @@ Ci sono a disposizione memorie con caratteristiche diverse in base al loro scopo
 3. Memoria principale (DRAM): meno veloce ma contiene più dati
 4. Memoria secondaria o di Massa: molti dati, indicativamente più lenti (anche se gli SSD consentono un vantaggio prestazionale rispetto agli HD o agli HHD).
 
-###### Rappresentazione dell'informazione:
+###### 1.2.4) Rappresentazione dell'informazione:
 
 Tutti i dati vengono solitamente rappresentati in maniera **binaria**, ovvero il bit che può prendere il valore 0 o 1. Questo è molto utile perché si basano strutturalmente basati su dispositivi bistabili (corrente ON o corrente OFF). Per questo l'elaboratore elettronico può operare solo su sequenze di simboli binari. 
 
@@ -235,7 +235,7 @@ Per i multipli del byte si adottano gli stessi simboli del sistema decimale, ma 
 
 ![](.\image\image-20201111184937248.png)
 
-###### Funzionamento della CPU:
+###### 1.2.5) Funzionamento della CPU:
 
 Innanzitutto bisogna dire che:
 
@@ -277,7 +277,7 @@ Durante l'esecuzione la CPU può eseguire 3 macro-tipologie di istruzioni:
 
 
 
-###### Il Bus di Sistema
+###### 1.2.6) Il Bus di Sistema
 
 Il bus di sistema è l'elemento che interconnette le varie periferiche e i vari elementi del calcolatore. In ogni istante il bus è dedicato al collegare due unità, una che trasmette e una che riceve. Il processore esegue il *bus mastering*, ovvero seleziona le connessioni da attivare e indica l'operazione da svolgere.  Il bus è suddiviso in tre insiemi di linee: *bus dati*, *bus indirizzi* e *linee di controllo* (quest'ultime trasportano informazioni relative alla modalità di trasferimento e alla temporizzazione). 
 
@@ -285,7 +285,7 @@ Il Bus di sistema ha l'organizzazione della comunicazione cosiddetta *master/sla
 
 
 
-###### Le periferiche: memorie di massa
+###### 1.2.7) Le periferiche: memorie di massa
 
 Con il termine memoria di massa ci si riferisce a un dispositivo di memorizzazione permanente capace di contenere grosse quantità di dati.
 
@@ -309,7 +309,7 @@ Possono essere: fissi o rimovibili, ad accesso sequenziale o casuale, dispositiv
 
 
 
-###### L'interfaccia delle Periferiche
+###### 1.2.8) L'interfaccia delle Periferiche
 
 ![](.\image\image-20201112230056001.png)
 
@@ -372,7 +372,7 @@ Logicamente il processo non viene gestito direttamente dal processore reale, se 
 
 
 
-![](./image\image-20201123234616173.png)
+![](.\image\image-20201123234616173.png)
 
 Nel processore è possibile che ci sia un solo processo in esecuzione in ogni istante, mentre gli altri processi sono pronti o in attesa. Ad ogni processo viene assegnato un valore massimo di tempo di esecuzione, scaduto tale viene revocato il processore virtuale e assegnato a un altro processo. Questa tecnica è detta di time-sharing, viene eseguito dal nucleo che decide da quali processi devono andare in esecuzione determinando lo *scheduling*, che è sequenziale. La soluzione tipica per la gestione del tempo di esecuzione di processi è a turno (*round-robin*, tutti i processi in questo hanno la stessa priorità ad essere eseguiti, nella realtà non funziona perché alcuni processi hanno la priorità). La CPU viene rilasciata anche quando un processo sta aspettando un I/O da/verso una periferica.
 
@@ -405,7 +405,7 @@ Il C presenta una serie di elementi che lo rendono importante da imparare:
 
 Il linguaggio C è stato creato nel 1972 da Kernighan e Ritchie ai Bell Tel. Labs. 
 
-# 3.1 Operazioni Logiche (algebra di Boole)
+### 1.1) Operazioni Logiche (algebra di Boole)
 
 L'algebra di Boole è basata su tre operatori logici (NOT, AND, OR). Gli operandi posso assumere due valori: VERO e FALSO. 
 
@@ -416,9 +416,9 @@ Gli operatori godono della proprietà
 
 Le tabelle di verità associano a tutti i possibili valori degli operandi il risultato
 
-![](C:\Users\giova\Documents\1_UNI\programmazione1\appunti\appunti-prog1\image\image-20201207220212631-1607774144622.png)
+![](.\image\image-20201207220212631-1607774144622.png)
 
-![](C:\Users\giova\Documents\1_UNI\programmazione1\appunti\appunti-prog1\image\image-20201207220252086-1607774220882.png)
+![](.\image\image-20201207220252086-1607774220882.png)
 
 solitamente NOT viene rappresentata con !, AND con && e OR con ||.
 
@@ -434,7 +434,7 @@ Per calcolare il risultato di un espressione (per esempio NOT Y AND (Y OR NOT X)
 
 
 
-![](C:\Users\giova\Documents\1_UNI\programmazione1\appunti\appunti-prog1\image\image-20201207220834575.png)
+![](.\image\image-20201207220834575.png)
 
 #### Leggi di De Morgan
 
@@ -447,7 +447,7 @@ si possono dimostrare compilando la tabella di verità e osservando che le tabel
 
 **Contradizione**: espressione sempre falsa
 
-# 3.2 Codifica Semplici Algoritmi in C
+### 1.2) Codifica Semplici Algoritmi in C
 
 istruzione di assegnamento:
 
@@ -459,7 +459,7 @@ y = z;
 
 
 
-### **costruttore if-else**
+#### Costruttore if-else
 
 diagramma di flusso:
 
@@ -484,7 +484,7 @@ dopo le parentesi graffe il ; non è necessario, ma se viene messo non c'è erro
 
 
 
-### Precedenza degli operatori
+#### Precedenza degli operatori
 
 In un espressione vengono eseguiti prima gli operatori con precedenza superiore, se gli operatori sono dello stesso gruppo si usano le regole di associatività (da destra o da sinistra), le parentesi posso essere usate per modificare la precedenza. 
 
@@ -504,7 +504,7 @@ if (((a + b – 4) <= 9) && (x < tot -1) )
 
 
 
-### Istruzione Iterativa ( ciclo )
+#### Istruzione Iterativa ( ciclo )
 
 il diagramma di flusso è il seguente (il ciclo si chiama while). Il blocco istruzioni viene ripetuto fino a quando l'espressione non diventa falsa. 
 
@@ -516,7 +516,7 @@ il diagramma di flusso è il seguente (il ciclo si chiama while). Il blocco istr
 
 (da pagina 38 a 56 un po' di esercizi noiosi)
 
-#### getchar e putchar
+##### Getchar e Putchar
 
 ```c++
 //getchar legge il prossimo carattere inserito da tastiera
@@ -527,7 +527,7 @@ putchar(c)
 
 
 
-#### **Esercizio scale:** 
+##### Esercizio scale:
 
 Sia data una scala di N gradini. Si supponga di salire l’intera scala con passi da 1 , 2 o 3 scalini. In quanti possibili modi si può salire l’intera scala ?
 
@@ -547,7 +547,56 @@ Per arrivare al quarto gradino ho solo tre possibilità: fare un passo da uno, d
 
 Aggiorno il numero di passi per il gradino n-1, n-2, n-3 e vado avanti.   (se non si capisce chiedetemi che vi spiego meglio).
 
-# 4.1 Array in C
+### 1.3) Strutture di controllo
+
+#### Istruzione di ciclo: *FOR*
+
+schema a blocchi e sintassi: 
+
+<img src="C:/Users/giova/Documents/1_UNI/programmazione1/appunti/appunti-prog1/appunti/image/image-20201207223822742.png" alt="image-20201207223822742" style="zoom:80%;" />
+
+
+questo operatore è utile quando so a priori quante operazioni devo fare, in quei casi è più compatto rispetto ad un while.
+
+
+
+#### Il costrutto *DO-WHILE*
+
+schema a blocchi e sintassi:
+
+![](.\image\image-20201207224157049.png)
+
+```c++
+// un esempio
+Contatore = 0;
+do
+{
+    scanf (" %c", &Dato);
+    Contatore ++;
+} while (Dato != '%’);
+```
+
+si utilizza quando voglio eseguire un blocco di istruzioni almeno una volta, può essere utile quando devo fare un controllo sull'input da tastiera.
+
+
+
+#### Il costrutto *SWITH*
+
+Va a sostituire un if-else multiplo, schema a blocchi e sintassi:
+
+![](.\image\image-20201207224317378.png)
+
+Il **default** (le istruzioni che vengono eseguite in caso che nessuna delle altre sia vera) è opzionale. I singoli case vengono eseguiti quando il valore dell'espressione è uguale a quello scritto appena dopo l'istruzione case. ATTENZIONE: bisogna mettere il break dopo il blocco istruzioni altrimenti si rimane all'interno dello switch (verranno valutati i case seguenti ed eseguito il default se presente).
+
+Valuta solo variabili di tipo INT, quindi l'espressione deve avere come risultato un int.
+
+**Break**: quando viene eseguito all'interno di un while, for, do, switch provoca l'uscita dall'istruzione
+
+**Continue**:  quando viene eseguito all'interno di un ciclo passa alla iterazione successiva
+
+un linguaggio di programmazione può codificare qualsiasi algoritmo se ha: sequenza di istruzioni, if-else e while.
+
+### 2.1) Array in C
 
 Gli array possono essere paragonati a vettori e matrici in matematica. Da un punto di vista più concreto sono una sequenza di celle di memoria consecutive e omogenee. L'array è quindi un contenitore per *variabili dello stesso tipo*. 
 
@@ -565,7 +614,7 @@ il compilatore va a riservare la memoria per tutti questi elementi
 
 
 
-![](C:\Users\giova\Documents\1_UNI\programmazione1\appunti\appunti-prog1\image\image-20201208144533768-1607774562526.png)
+![](.\image\image-20201208144533768-1607774562526.png)
 
 
 
@@ -579,7 +628,7 @@ ATTENZIONE: se vado oltre l'indice massimo dell'array accedo a celle di memoria 
 
 L'array in C non è un tipo, ma un costruttore di tipo. 
 
-### Inizializzazione e stampa
+#### Inizializzazione e stampa
 
 si può inizializzare direttamente al momento della dichiarazione
 
@@ -609,7 +658,7 @@ esercizi sulle array dalla slide 31 a 41.
 
 
 
-### Array multidimensionali
+#### Array multidimensionali
 
 Le array di due dimensioni corrispondo alle matrici in matematica. Si dichiarano nel seguente modo: 
 
@@ -632,7 +681,7 @@ int a[4][5]= { {2, 5, -8, 7, 6},
 
 Per semplicità possiamo immaginare l'array in due o più dimensioni, ma la macchina astratta del C memorizza gli elementi uno dietro l'altro. Per esempio l'array creata sopra verrà memorizzata nel seguente modo: 
 
-![](C:\Users\giova\Documents\1_UNI\programmazione1\appunti\appunti-prog1\image\image-20201208150630550.png)
+![](.\image\image-20201208150630550.png)
 
 altri esempi di inizializzazione corretta e sbagliata: 
 
@@ -665,3 +714,108 @@ int main(int argc, char *argv[]){
 ```
 
 esercizi da pagina 61 in poi
+
+### 2.2) Stringhe in C
+
+Un array di char può essere rappresentata con una stringa (per esempio "hello"). L'ultimo carattere deve essere il carattere nullo '\0'. Questo carattere serve alle varie funzioni per capire dove terminerà la stringa. Quindi quando vado a creare una stringa per memorizzare n caratteri ne serviranno n+1 (uno lo uso per il carattere nullo).
+
+Esiste un modo semplificato per inizializzare un'array di caratteri come stringa: 
+
+```c++
+char mia_stringa[] = “Ciao a tutti!”;
+```
+
+Questo mi memorizza automaticamente lo spazio per il miei caratteri più il carattere terminatore. Quindi il risultato sarà: 
+
+![image-20201212103116117](C:\Users\giova\Documents\1_UNI\programmazione1\appunti\appunti-prog1\image\image-20201212103116117.png)
+
+L'inizializzazione vista sopra è molto più veloce ed è equivalente ad inizializzare nel seguente modo: 
+
+```c++
+char mia_stringa[] = {‘C’,‘i’,‘a’,’o’,’ ‘,’a’,’ ‘,’t’,’u’,’t’,’t’,’i’,’!’,’\0’};
+```
+
+Se non specifico il numero all'interno delle parentesi quadre quando dichiaro l'array il compilatore va a riservare uno spazio pari al numero degli elementi con cui l'array viene inizializzato. Nel caso delle stringhe posso anche dichiarare esplicitamente la dimensione di memoria da riservare: 
+
+```c++
+char frase[20]=”Ciao a tutti!”;
+```
+
+Bisogna stare attenti che un elemento (dei 20 messi a disposizione per l'array) sarà occupato da '\0' e poi gli elementi in più saranno lasciati vuoti. 
+
+ATTENZIONE: se non specifico né il numero di caratteri (all'interno delle parentesi quadre) né assegno alla stringa un valore, il compilatore da un errore, perché non sa quanta memoria riservare.
+
+```
+char parola[]; // ERRORE
+```
+
+per stampa le stringhe si usa %s:
+
+```c++
+printf(“%s”, mia_stringa); //questo non sarebbe possibile se non ci fosse il carattere terminatore perché non saprei dove fermarmi 
+```
+
+quando faccio scanf non bisogna mettere la & perché la stringa è un array e la variabile con il suo nome è già un indirizzo.
+
+```c++
+scanf(“%s”, parola);
+```
+
+### 2.4) Rappresentazione di informazioni
+
+in un calcolatore le informazioni vengono rappresentate sotto forma di dati, codificati in un linguaggio comprensibile al calcolatore. Per permetterci di interpretare le informazioni i dati devono essere decodificati. Quindi ci sono diversi livelli di decodifica che partono dall'hardware fino ad arrivare ad informazioni interpretabili a noi umani. 
+
+<img src="C:/Users/giova/Documents/1_UNI/programmazione1/appunti/appunti-prog1/appunti/image/image-20201212104918251.png" alt="image-20201212104918251" style="zoom:79%;" />
+
+I tipi di dato che il calcolatore può interpretare direttamente sono :
+
+* booleani 
+* numeri interi
+* numeri frazionari
+* caratteri
+
+Per questi dati la codifica è gestita direttamente dall'HW, per tipi di dato più complessi si usa una rappresentazione di tipo software. 
+
+#### Interi 
+
+Sono rappresentati da una sequenza finita di bit. 8 bit (un byte) permettono di rappresentare i valori da 0 a 255. Solitamente per gli interi positivi si usano 4 byte (32 bit), quindi i numeri vanno da 0 a 4.294.967.295. (questo implica che all'interno dei calcolatori i numeri sono finiti).
+
+Per rappresentare anche i numeri negativi, si utilizza il primo bit come bit di segno (0 per i numeri negativi, 1 per i positivi)
+
+![](./image/image-20201212110945997.png)
+
+In realtà nei calcolatori non si usa questa rappresentazione ma quella in complemento a due con i seguenti vantaggi: non c'è un doppio zero, non c'è bisogno di una circuiteria specifica. Esempio: 
+
+![](.\image\image-20201212111232217.png)
+
+Per decodificare i valori positivi si procede nel modo normale, per quelli negativi si decodifica e poi si sottrae 2^N-1. Per invertire i numeri si invertono gli zeri con gli uno e si somma uno.
+
+##### Numeri frazionari
+
+I dati con numeri dopo la virgola vanno rappresentati in maniera opportuna, ci sono due tecniche: 
+
+* **virgola fissa**: si dividono i bit che rappresentano i valori interi da quello per i valori dopo la virgola
+* **virgola mobile**: la maggior parte dei bit viene usata per le cifre rappresentative del numero, gli altri per sapere dove mettere la virgola. 
+
+esempio codifica virgola fissa:
+
+![](.\image\image-20201212112345743.png)
+
+Per la virgola mobile solitamente vengono utilizzati 32 bit, 1 per il segno, 8 per l'esponente e il resto per la mantissa
+
+![](.\image\image-20201212112608865.png)
+
+Quindi la mantissa rappresenta numeri da 0 a 1, che verranno moltiplicati per 2^e in modo da ottenere il numero desiderato.
+$$
+m=0.11011_{(2)} =  2^{-1}+2^{-2}+2^{-4}+2^{-5} = 0.84375
+$$
+un numero si dice normalizzato se l'esponente è diverso da 0, la mantissa è compresa tra 1 e 2 l'intervallo dei numeri è 
+$$
+(-2^{128}, -2^{-126}][2^{-126}, 2^{128})
+$$
+
+##### Caratteri
+
+per codificare i caratteri si utilizza la tabella ASCII, i primi 128 valori sono fissi i successivi rappresentato la tabella ASCII estesa con caratteri più specifici (per esempio c'è una tabella ASCII estesa con i caratteri è, ò, à...). 
+
+attualmente si utilizza l'UNICODE che utilizza 2 bytes per ogni carattere e permette di non avere tabelle diverse per ogni regione del mondo. 
