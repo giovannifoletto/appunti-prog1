@@ -8,4 +8,4 @@ titlepage: true
 titlepage-text-color: "FFFFFF" 
 titlepage-rule-color: "360049" 
 titlepage-rule-height: 0 
-titlepage-background: "background.pdf"
+titlepage-background: "./image/background.pdf"
