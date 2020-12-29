@@ -154,4 +154,3 @@ di solito si usano almeno 4 byte: (32 bit) per rappresentare un intero positivo,
 - come funziona il C con le variabili. **Assegnamento**
   - il valore dell'espressione dei destra viene convertito al tipo che sta a sinistra del =
   - la conversione automatica è comoda perchè permette la conversione tra tipi diversi. NEGATIVO: si va a perdere informazioni oltre la virgola.
-  - 
