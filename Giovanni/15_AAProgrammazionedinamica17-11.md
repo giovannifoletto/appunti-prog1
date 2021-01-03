@@ -16,7 +16,7 @@ questo consiste nel creare oggetti nuovi, che non si possono prevedere in strutt
 
 Il controllo nel C si ottiene attraverso una libreria di funzioni, che implementa una strategia di allocazione dinamica, ovvero un'allocazione e de-allocazione della memoria disciplinata.
 
-Di solito alloca all'inizio del programma e viene de-alloccata alla fine dell'esecuzione del programma. Per molte istruzioni e variabili questo continua a essere così (stack).
+Di solito alloca all'inizio del programma e viene de-allocata alla fine dell'esecuzione del programma. Per molte istruzioni e variabili questo continua a essere così (stack).
 
 ```c
 #include <stdlib.h>

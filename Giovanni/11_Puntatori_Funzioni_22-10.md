@@ -81,7 +81,7 @@ TipoPuntatore P;
 tipoDato x;
 ```
 
-![image-20201022154400716](C:\Users\giova\AppData\Roaming\Typora\typora-user-images\image-20201022154400716.png)
+![image-20201022154400716](C:\Users\giova\Documents\1_UNI\programmazione1\appunti\appunti-prog1\Giovanni\image\image-20201022154400716.png)
 
 il quadrato rappresenta il puntatore, la freccia invece indica a cosa punta il valore. Sopra il quadrato è presente l'identificatore del puntatore. La freccia arriva in una zona con un solo tipo di dato e poi identificata da un nome.
 
